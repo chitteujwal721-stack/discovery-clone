@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-media">
+      {% if c.hero_video %}
+      <video autoplay loop muted playsinline poster="{{ c.hero }}?auto=format&fit=max&h=1200&w=2000">
+        <source src="{{ c.hero_video }}" type="video/mp4">
+      </video>
+      {% else %}
+      <img data-fade src="{{ c.hero }}?auto=format&fit=max&h=1600&w=2200" alt="{{ c.name }}" loading="eager">
+      {% endif %}
+    </div>
+    <div class="site-max hero-inner">
+      <a href="{{ root }}communities/index.html" class="hero-crumb">
+        <span>COMMUNITIES</span><span class="sep">/</span><span>{{ c.location }}</span>
+      </a>
+      <h1 class="hero-title">{{ c.name }}</h1>
+    </div>
+    <button class="hero-scroll" aria-label="Scroll down">
+      <svg viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:1rem;height:auto;"><path d="M8.68 6.118L4.34 10.458L0 6.118L1.022 5.11L3.584 7.672V0H5.082V7.686L7.658 5.11L8.68 6.118Z" fill="currentColor"/></svg>
+    </button>
+  </section>
+
+  <nav class="sub-nav">
+    <div class="site-max sub-nav__inner">
+      <span class="sub-nav__title">{{ c.name }}</span>
+      <div style="display:flex;">
+        <a href="#experiences" class="uline">Experiences</a>
+        {% if c.residences_title %}<a href="#residences" class="uline">Residences</a>{% endif %}
+        {% if c.visit_site %}<a href="{{ c.visit_site }}" target="_blank" rel="noopener" class="uline">Visit Site</a>{% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-60 section-cream">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div class="media-box aspect-square reveal-scale">
+          <img data-fade src="{{ (c.intro_img or c.hero) }}?auto=format&fit=max&h=1500&w=1500" alt="{{ c.intro_title }}" loading="lazy">
+        </div>
+        <div style="padding-top:2rem;">
+          <h2 class="type-h4">{{ c.intro_title }}</h2>
+          <div class="txt type-body-md mt-30">
+            {% for p in c.intro_text %}<p>{{ p }}</p>{% endfor %}
+          </div>
+          {% if c.contact_cta %}
+          <a href="{{ c.contact_cta }}" target="_blank" rel="noopener" class="btn mt-40">Contact us</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if c.experiences %}
+  <section id="experiences" class="py-100 section-cream">
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-60">Experiences at {{ c.name }}</h2>
+      <div class="exp-grid">
+        {% for e in c.experiences %}
+        <div class="exp-card reveal" style="--i:{{ loop.index0 }}">
+          <figure><img data-fade src="{{ e.img }}?auto=format&fit=max&h=900&w=1200" alt="{{ e.title }}" loading="lazy"></figure>
+          <h3>{{ e.title }}</h3>
+          <p>{{ e.text }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if c.gallery %}
+  <section class="py-60 section-cream">
+    <div class="site-max">
+      <div class="gallery-grid reveal">
+        {% for g in c.gallery %}
+        <figure><img data-fade src="{{ g }}?auto=format&fit=max&h=1200&w=1000" alt="{{ c.name }} gallery" loading="lazy"></figure>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if c.residences_title %}
+  <section id="residences" class="py-60 section-cream">
+    <div class="site-max">
+      <div class="site-grid" style="gap-y:4rem;">
+        <div class="col-span-6" style="grid-column: span 5;">
+          <div class="reveal">
+            <h2 class="type-h4">{{ c.residences_title }}</h2>
+            <div class="txt type-body-md mt-30" style="max-width:35rem;">
+              <p>{{ c.residences_text }}</p>
+            </div>
+            {% if c.listing %}
+            <a href="{{ root }}communities/{{ c.slug }}/real-estate/index.html" class="btn mt-40">Listings</a>
+            {% endif %}
+          </div>
+          {% if c.listing %}
+          <a href="{{ root }}{{ c.listing.url[1:] }}" class="reveal mt-40" style="display:flex;gap:1.2rem;">
+            <div class="media-box" style="min-width:18rem;max-width:18rem;aspect-ratio:4/3;">
+              <img data-fade src="{{ c.listing.img }}?fit=max&h=700&q=85&w=700" alt="{{ c.listing.name }}" loading="lazy">
+            </div>
+            <div>
+              <h3 class="type-body-md font-medium">{{ c.listing.name }}</h3>
+              <p class="loc type-body-sm">{{ c.listing.location }}</p>
+              <ul class="stats mt-8">
+                {% for s in c.listing.stats %}<li>{{ s }}</li>{% endfor %}
+              </ul>
+            </div>
+          </a>
+          {% endif %}
+        </div>
+        <div class="col-span-6 reveal-scale" style="grid-column: span 7;">
+          <div class="media-box aspect-tall">
+            <img data-fade src="{{ (c.residences_img or c.hero) }}?auto=format&fit=max&h=1600&w=1400" alt="{{ c.name }} residences" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if related %}
+  <section class="py-80 section-white" data-slider>
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-40">{{ c.category }} Communities</h2>
+    </div>
+    <div class="site-max">
+      <div class="slider__track">
+        {% for r in related %}
+        <article>
+          <a href="{{ root }}communities/{{ r.slug }}/index.html" data-url="{{ root }}communities/{{ r.slug }}/index.html">
+            <div class="media-box aspect-portrait h-darken">
+              <img data-fade src="{{ r.hero }}?auto=format&fit=max&h=1200&w=900" alt="{{ r.name }}" loading="lazy">
+            </div>
+            <h3 class="type-body-md font-medium mt-8">{{ r.name }}</h3>
+            <p class="loc type-body-sm">{{ r.location }}</p>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="slider__progress"><div class="slider__progress-bar"></div></div>
+      <div class="slider__nav">
+        <button data-slider-prev aria-label="Previous"><svg viewBox="0 0 11 11" fill="none"><path d="M5.99 0.69L5.2 1.47L8.32 4.6H0.87V5.71H8.39L5.27 8.83L6.06 9.63L10.49 5.19L5.99 0.69Z" fill="currentColor" transform="scale(-1,1) translate(-11,0)"/></svg></button>
+        <button data-slider-next aria-label="Next"><svg viewBox="0 0 11 11" fill="none"><path d="M5.99 0.69L5.2 1.47L8.32 4.6H0.87V5.71H8.39L5.27 8.83L6.06 9.63L10.49 5.19L5.99 0.69Z" fill="currentColor"/></svg></button>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+</main>
+{% endblock %}

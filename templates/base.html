@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>{{ title }} | Ansari Sami</title>
+<meta name="description" content="{{ description or 'Ansari Sami creates private residential communities and resorts in the world\'s most beautiful settings.' }}">
+<link rel="icon" href="{{ root }}assets/favicon.png">
+<link rel="stylesheet" href="{{ root }}assets/css/fonts.css">
+<link rel="stylesheet" href="{{ root }}assets/css/main.css">
+</head>
+<body class="is-preload">
+
+<header class="site-header">
+  <div class="sh-bar">
+    <button type="button" class="sh-menu-btn" data-nav-open aria-label="Open menu">
+      <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.5H18.4615" stroke="currentColor" stroke-linejoin="round"/><path d="M0 9.5H18.4615" stroke="currentColor" stroke-linejoin="round"/></svg>
+      <span class="type-caption-l font-medium sh-menu-label">Menu</span>
+    </button>
+    <a href="{{ root }}index.html" class="sh-logo" aria-label="Ansari Sami">
+      {% include "_logo.html" %}
+    </a>
+    <a href="{{ root }}contact.html" class="sh-cta-icon" aria-label="Inquire">
+      <span class="type-caption-l font-medium sh-menu-label">Inquire</span>
+    </a>
+  </div>
+</header>
+
+<nav class="sub-nav-bar" data-sub-nav-bar>
+  <div class="sub-nav-bar__inner">
+    <a href="{{ root }}communities/index.html" class="uline">Our Worlds</a>
+    <a href="{{ root }}real-estate/index.html" class="uline">Real Estate</a>
+    <a href="{{ root }}experiences.html" class="uline">Experiences</a>
+    <a href="{{ root }}about.html" class="uline">About</a>
+    <a href="{{ root }}contact.html" class="uline">Contact</a>
+  </div>
+</nav>
+
+
+
+<div class="nav-overlay">
+  <div class="nav-overlay__top">
+    <a href="{{ root }}index.html" style="height:2.6rem;display:flex;align-items:center;">
+      {% include "_logo.html" %}
+    </a>
+    <button type="button" class="nav-overlay__close" data-nav-close aria-label="Close menu">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="1.4"/></svg>
+    </button>
+  </div>
+  <div class="nav-overlay__body">
+    <a href="{{ root }}index.html">Home</a>
+    <a href="{{ root }}communities/index.html">Our Worlds</a>
+    <a href="{{ root }}real-estate/index.html">Real Estate</a>
+    <a href="{{ root }}experiences.html">Experiences</a>
+    <a href="{{ root }}about.html">About</a>
+    <a href="{{ root }}gallery.html">Gallery</a>
+    <a href="{{ root }}contact.html">Contact</a>
+  </div>
+  <div class="nav-overlay__foot">
+    <a href="{{ root }}careers.html" class="uline">Careers</a>
+    <a href="https://discoverylandcofoundation.org/" target="_blank" rel="noopener" class="uline">Foundation</a>
+    <a href="{{ root }}contact.html" class="uline">Contact</a>
+  </div>
+</div>
+
+{% block content %}{% endblock %}
+
+<footer class="site-footer">
+  <div class="site-max footer-top">
+    <div class="footer-grid">
+      <div class="col-span-6" style="grid-column: span 2;">
+        <a href="{{ root }}index.html" class="footer-logo"><img src="{{ root }}assets/logo-dark.svg" alt="Ansari Sami"></a>
+      </div>
+      <div class="col-span-6 footer-col footer-find" style="grid-column: span 3;">
+        <h3>Find</h3>
+        <ul>
+          <li><a href="{{ root }}real-estate/index.html">Real Estate</a></li>
+          <li><a href="{{ root }}experiences.html">Experiences</a></li>
+        </ul>
+      </div>
+      <div class="col-span-3 footer-col" style="grid-column: span 2;">
+        <h3>Discover</h3>
+        <ul>
+          <li><a href="{{ root }}communities/index.html" class="uline">Communities</a></li>
+          <li><a href="{{ root }}real-estate/index.html" class="uline">Real Estate</a></li>
+          <li><a href="{{ root }}experiences.html" class="uline">Experiences</a></li>
+          <li><a href="{{ root }}gallery.html" class="uline">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="col-span-3 footer-col" style="grid-column: span 2;">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ root }}about.html" class="uline">About</a></li>
+          <li><a href="{{ root }}careers.html" class="uline">Careers</a></li>
+          <li><a href="{{ root }}contact.html" class="uline">Contact</a></li>
+          <li><a href="https://discoverylandcofoundation.org/" target="_blank" rel="noopener" class="uline">Foundation</a></li>
+        </ul>
+      </div>
+      <div class="col-span-6 footer-newsletter" style="grid-column: span 3;">
+        <h4 class="type-body-xs font-medium mb-15">Stay in the know</h4>
+        <p class="type-body-md">Sign up for updates on new communities, listings, and Discovery news.</p>
+      </div>
+    </div>
+  </div>
+  <div class="site-max footer-bottom">
+    <div class="footer-bottom-grid">
+      <p>&copy; <span data-year>2026</span> Ansari Sami. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" class="uline">Instagram</a>
+        <a href="#" class="uline">Facebook</a>
+        <a href="#" class="uline">LinkedIn</a>
+      </div>
+      <a href="#top" class="to-top uline">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ root }}assets/js/main.js"></script>
+</body>
+</html>

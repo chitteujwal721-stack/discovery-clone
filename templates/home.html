@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero hero-home">
+    <div class="hero-media">
+      <video autoplay loop muted playsinline poster="https://www.datocms-assets.com/197197/1779437758-home-3.jpg?auto=format&fit=max&h=1200&w=2000">
+        <source src="{{ root }}assets/video/hero-home.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="site-max hero-inner">
+      <div class="type-caption font-medium" style="letter-spacing:.3em;">LOCATIONS</div>
+      <h1 class="hero-title">Discover<br>Your World</h1>
+      <p class="type-body-md" style="max-width:44rem;opacity:.9;">Select from locations below or scroll to discover more.</p>
+    </div>
+    <button class="hero-scroll" aria-label="Scroll down">
+      <svg viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:1rem;height:auto;"><path d="M8.68 6.118L4.34 10.458L0 6.118L1.022 5.11L3.584 7.672V0H5.082V7.686L7.658 5.11L8.68 6.118Z" fill="currentColor"/></svg>
+    </button>
+  </section>
+
+  <section class="section-cream py-100">
+    <div class="site-max">
+      <div class="two-col reveal" style="align-items:flex-end;margin-bottom:6rem;">
+        <div>
+          <p class="type-caption font-medium" style="opacity:.6;margin-bottom:1.6rem;">LOCATIONS</p>
+          <h2 class="type-h2">Our Worlds</h2>
+          <p class="type-body-md" style="opacity:.75;margin-top:1.6rem;max-width:48rem;">Browse our private residential communities and resorts.</p>
+        </div>
+        <div style="display:flex;justify-content:flex-end;">
+          <a href="{{ root }}communities/index.html" class="btn">View all</a>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        {% for c in featured %}
+        <a href="{{ root }}communities/{{ c.slug }}/index.html" class="card reveal" style="--i:{{ loop.index0 % 8 }}">
+          <figure><img data-fade src="{{ c.hero }}?auto=format&fit=max&h=1200&w=900" alt="{{ c.name }}" loading="lazy"></figure>
+          <h3>{{ c.name }}</h3>
+          <p class="loc">{{ c.location }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white py-100">
+    <div class="site-max">
+      <div class="two-col reveal" style="margin-bottom:5rem;">
+        <div>
+          <p class="type-caption font-medium" style="opacity:.6;margin-bottom:1.6rem;">REAL ESTATE</p>
+          <h2 class="type-h2">Find your bespoke residence in one of our communities.</h2>
+        </div>
+        <div style="display:flex;justify-content:flex-end;align-items:flex-end;">
+          <a href="{{ root }}real-estate/index.html" class="btn">View all</a>
+        </div>
+      </div>
+      <div class="card-grid">
+        {% for c in communities if c.listing %}
+        {% if loop.index0 < 8 %}
+        <a href="{{ root }}{{ c.listing.url[1:] }}" class="card reveal" style="--i:{{ loop.index0 % 8 }}">
+          <figure><img data-fade src="{{ c.listing.img }}?fit=max&h=1000&q=85&w=1000" alt="{{ c.listing.name }}" loading="lazy"></figure>
+          <h3>{{ c.listing.name }}</h3>
+          <p class="loc">{{ c.listing.location }}</p>
+          <ul class="stats">
+            {% for s in c.listing.stats %}<li>{{ s }}</li>{% endfor %}
+          </ul>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-100" style="background:var(--color-green);color:#fff;">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div>
+          <p class="type-caption font-medium" style="opacity:.6;margin-bottom:1.6rem;">EXPERIENCES</p>
+          <h2 class="type-h2">Memorable days. Exceptional nights. We believe it's our mission to make every minute matter.</h2>
+          <a href="{{ root }}experiences.html" class="btn btn-white mt-40">Discover experiences</a>
+        </div>
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="https://www.datocms-assets.com/197197/1777109144-experiences.jpg?auto=format&fit=max&h=1400&w=1000" alt="Experiences" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cream py-100">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="https://www.datocms-assets.com/197197/1779437758-home-3.jpg?auto=format&fit=max&h=1400&w=1000" alt="Discovery family" loading="lazy">
+        </div>
+        <div>
+          <p class="type-caption font-medium" style="opacity:.6;margin-bottom:1.6rem;">DISCOVERY FAMILY</p>
+          <h2 class="type-h2">For more than three decades, Ansari Sami has created unique places among nature's exquisite beauty.</h2>
+          <div class="mt-40" style="display:flex;flex-direction:column;gap:2.4rem;">
+            <div>
+              <h3 class="type-body-lg font-medium">Inspired by the land</h3>
+              <p class="type-body-sm mt-8" style="opacity:.8;">For more than three decades, Discovery has built communities that encourage families to create unforgettable memories in the world's most beautiful settings.</p>
+            </div>
+            <div>
+              <h3 class="type-body-lg font-medium">Luxury bespoke homes</h3>
+              <p class="type-body-sm mt-8" style="opacity:.8;">Each community offers turn-key residences in addition to custom homes built in collaboration with our expert design team.</p>
+            </div>
+            <div>
+              <h3 class="type-body-lg font-medium">Experience beyond compare</h3>
+              <p class="type-body-sm mt-8" style="opacity:.8;">With over 40 exclusive properties worldwide, we are dedicated to elevating the art of living and fostering a true sense of belonging.</p>
+            </div>
+          </div>
+          <a href="{{ root }}about.html" class="btn mt-40">About us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white py-100">
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-60">Discover more</h2>
+      <div class="two-col">
+        <a href="{{ root }}communities/index.html" class="reveal" style="display:block;">
+          <div class="media-box aspect-square"><img data-fade src="https://www.datocms-assets.com/197197/1774020830-tenuta-toscana.jpeg" alt="Our Communities" loading="lazy"></div>
+          <h3 class="type-h4 mt-20">Our Communities</h3>
+          <p class="type-body-sm" style="opacity:.7;">Explore all our communities and resorts</p>
+        </a>
+        <a href="{{ root }}real-estate/index.html" class="reveal" style="display:block;">
+          <div class="media-box aspect-square"><img data-fade src="https://www.datocms-assets.com/197197/1774020896-eldo.jpg" alt="Real Estate" loading="lazy"></div>
+          <h3 class="type-h4 mt-20">Real Estate</h3>
+          <p class="type-body-sm" style="opacity:.7;">Browse our current listings</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

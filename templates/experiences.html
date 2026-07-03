@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:70vh;min-height:46rem;">
+    <div class="hero-media">
+      <img data-fade src="https://www.datocms-assets.com/197197/1779463201-image.jpg?auto=format&fit=max&h=1600&w=2200" alt="Experiences" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <p class="type-caption font-medium">EXPERIENCES</p>
+      <h1 class="hero-title">Unforgettable<br>Experiences</h1>
+    </div>
+  </section>
+
+  <section class="py-100 section-cream">
+    <div class="site-max">
+      <div class="reveal" style="max-width:80rem;margin:0 auto;text-align:center;">
+        <p class="type-caption font-medium" style="opacity:.6;">EXCLUSIVE TO YOUR WORLD</p>
+        <h2 class="type-h2 mt-20">Discovery integrates one-of-a-kind environments with sustainable development to serve our members, communities, and the planet.</h2>
+        <p class="type-body-md mt-30" style="opacity:.75;">By harmonizing design with nature, we provide opportunities for families to gather and live sustainably while supporting local communities and economies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-80 section-white">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div class="media-box aspect-portrait">
+          <img data-fade src="https://www.datocms-assets.com/197197/1779463201-image.jpg?auto=format&fit=max&h=1400&w=1000" alt="Ansari Sami" loading="lazy">
+        </div>
+        <div>
+          <h2 class="type-h3">Ansari Sami creates private communities where families gather, adventures unfold, and the best moments of life happen naturally.</h2>
+          <div class="values-list">
+            <div>
+              <h3>Elevated experiences</h3>
+              <p>Our worlds are designed to offer you endless opportunities to share incredible once-in-a-lifetime experiences and adventures every minute of the day.</p>
+            </div>
+            <div>
+              <h3>Activity-driven lifestyle</h3>
+              <p>A Discovery community is an escape from routine. Each day encourages a lifestyle of health and happiness with endless possibilities for connection and adventure.</p>
+            </div>
+            <div>
+              <h3>Family-first programming</h3>
+              <p>We believe a community is only as vibrant as the people and their experiences in it — spending quality time with loved ones is the foundation of everything we do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% set pillars = [
+    {"title":"Golf","text":"We commission the world's most renowned course architects to design spectacular golf experiences on challenging yet incredibly playable 18-hole courses. Our trademark comfort stations also set new standards in on-course amenities.","img":"https://www.datocms-assets.com/197197/1773158369-1_1.jpg"},
+    {"title":"Outdoor Pursuits","text":"Our signature Outdoor Pursuits program is designed for families to create lasting memories together. Whether you're trying a new sport or taking a day trip, our team will ensure you make the most of every minute.","img":"https://www.datocms-assets.com/197197/1773158518-2-1.jpg"},
+    {"title":"Wellness","text":"True luxury begins from within. It's how you feel, how you move, and how you experience the world. Experience wellness without compromise, where health and human connection meet to transform your daily life into a thriving one.","img":"https://www.datocms-assets.com/197197/1773158650-3-1.jpg"},
+    {"title":"Culinary","text":"A pillar in the Discovery lifestyle, the culinary experience at every destination is inspired by the land and crafted by the world's finest chefs. Every meal showcases the finest locally grown and organic produce.","img":"https://www.datocms-assets.com/197197/1773159428-4-1.jpg"},
+    {"title":"Discovery Downtown","text":"Discovery's city clubs offer a private, welcoming space for members to come together in the heart of the city, designed as a vibrant urban escape to unwind, connect with friends, and enjoy the best of downtown life.","img":"https://www.datocms-assets.com/197197/1773159470-5-1.jpg"}
+  ] %}
+
+  {% for p in pillars %}
+  <section class="py-80 {{ 'section-cream' if loop.index0 % 2 == 0 else 'section-white' }}">
+    <div class="site-max">
+      <div class="two-col reveal {{ 'reverse' if loop.index0 % 2 == 1 }}">
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="{{ p.img }}?auto=format&fit=max&h=1400&w=1000" alt="{{ p.title }}" loading="lazy">
+        </div>
+        <div style="align-self:center;">
+          <h2 class="type-h3">{{ p.title }}</h2>
+          <p class="type-body-md mt-20" style="opacity:.8;max-width:48rem;">{{ p.text }}</p>
+          <a href="{{ root }}contact.html" class="btn mt-40">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+</main>
+{% endblock %}

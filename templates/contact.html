@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:55vh;min-height:38rem;">
+    <div class="hero-media">
+      <img data-fade src="https://www.datocms-assets.com/197197/1774020896-eldo.jpg?auto=format&fit=max&h=1400&w=2200" alt="Contact Ansari Sami" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <p class="type-caption font-medium">CONTACT</p>
+      <h1 class="hero-title">Get in Touch</h1>
+    </div>
+  </section>
+
+  <section class="py-100 section-cream">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div>
+          <h2 class="type-h3">We'd love to hear from you</h2>
+          <p class="type-body-md mt-20" style="opacity:.75;max-width:44rem;">Whether you're interested in a specific community, exploring real estate opportunities, or simply want to learn more about the Discovery lifestyle, our team is here to help.</p>
+
+          <div class="mt-60" style="display:flex;flex-direction:column;gap:2.4rem;">
+            <div>
+              <p class="type-caption" style="opacity:.5;">Headquarters</p>
+              <p class="type-body-md mt-8">7975 N. Hayden Road, Suite D-355<br>Scottsdale, AZ 85258</p>
+            </div>
+            <div>
+              <p class="type-caption" style="opacity:.5;">Phone</p>
+              <p class="type-body-md mt-8">+1 (480) 348-1800</p>
+            </div>
+            <div>
+              <p class="type-caption" style="opacity:.5;">Email</p>
+              <p class="type-body-md mt-8">info@discoverylandco.com</p>
+            </div>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Thank you — this is a front-end demo, no data was sent.');">
+          <div class="form-field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" name="name" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="jane@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" placeholder="+1 (000) 000-0000">
+          </div>
+          <div class="form-field">
+            <label for="interest">Community of interest</label>
+            <select id="interest" name="interest">
+              <option value="">Select a community</option>
+              <option>Gozzer Ranch</option>
+              <option>Yellowstone Club</option>
+              <option>Barbuda Ocean Club</option>
+              <option>El Dorado</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

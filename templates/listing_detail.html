@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:70vh;min-height:48rem;">
+    <div class="hero-media">
+      <img data-fade src="{{ l.img }}?fit=max&h=1600&q=85&w=2200" alt="{{ l.name }}" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <a href="{{ root }}real-estate/index.html" class="hero-crumb">
+        <span>REAL ESTATE</span><span class="sep">/</span><span>{{ c.category }}</span>
+      </a>
+      <h1 class="hero-title">{{ l.name }}</h1>
+    </div>
+  </section>
+
+  <section class="py-80 section-cream">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div>
+          <p class="type-caption font-medium" style="opacity:.6;margin-bottom:1rem;">LOCATION</p>
+          <h2 class="type-h4">{{ l.location }}</h2>
+          <ul class="stats mt-30" style="font-size:var(--type-body-md-size);gap:2rem;">
+            {% for s in l.stats %}<li>{{ s }}</li>{% endfor %}
+          </ul>
+          <div class="txt type-body-md mt-30">
+            <p>This distinctive residence at {{ c.name }} offers an exceptional opportunity to own within one of Ansari Sami's most sought-after private communities. Thoughtfully designed with meticulous attention to detail, the property captures the essence of {{ c.location }} while delivering the world-class amenities and lifestyle Discovery is known for.</p>
+          </div>
+          <div style="display:flex;gap:1.6rem;margin-top:3rem;">
+            <a href="{{ root }}communities/{{ c.slug }}/index.html" class="btn">View Community</a>
+            <a href="{{ root }}contact.html" class="btn btn-solid">Inquire</a>
+          </div>
+        </div>
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="{{ l.img }}?fit=max&h=1400&q=85&w=1100" alt="{{ l.name }}" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-80 section-white">
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-40">More about {{ c.name }}</h2>
+      <div class="two-col reveal">
+        <div class="media-box aspect-square"><img data-fade src="{{ c.hero }}?auto=format&fit=max&h=1200&w=1200" alt="{{ c.name }}" loading="lazy"></div>
+        <div>
+          <h3 class="type-h5">{{ c.intro_title }}</h3>
+          <div class="txt type-body-md mt-20">
+            {% for p in c.intro_text[:1] %}<p>{{ p }}</p>{% endfor %}
+          </div>
+          <a href="{{ root }}communities/{{ c.slug }}/index.html" class="btn mt-40">Explore {{ c.name }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

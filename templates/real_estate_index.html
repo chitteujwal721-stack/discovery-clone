@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:60vh;min-height:40rem;">
+    <div class="hero-media">
+      <img data-fade src="https://www.datocms-assets.com/197197/1777109144-experiences.jpg?auto=format&fit=max&h=1400&w=2200" alt="Real Estate" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <h1 class="hero-title">Discover<br>Your World</h1>
+      <p class="type-body-md" style="opacity:.9;">Find your property away from the day-to-day. Your escape. Your world.</p>
+    </div>
+  </section>
+
+  {% for category, homes in by_category.items() %}
+  <section class="py-80 {{ 'section-cream' if loop.index0 % 2 == 0 else 'section-white' }}">
+    <div class="site-max">
+      <div class="two-col reveal" style="align-items:flex-end;margin-bottom:5rem;">
+        <h2 class="type-h3">{{ category }} Properties <span class="badge-count">({{ homes|selectattr('listing')|list|length }})</span></h2>
+        <div style="display:flex;justify-content:flex-end;">
+          <a href="{{ root }}real-estate/index.html" class="btn">View all</a>
+        </div>
+      </div>
+      <div class="card-grid">
+        {% for c in homes if c.listing %}
+        <a href="{{ root }}{{ c.listing.url[1:] }}" class="card reveal" style="--i:{{ loop.index0 % 8 }}">
+          <figure><img data-fade src="{{ c.listing.img }}?fit=max&h=1000&q=85&w=1000" alt="{{ c.listing.name }}" loading="lazy"></figure>
+          <h3>{{ c.listing.name }}</h3>
+          <p class="loc">{{ c.listing.location }}</p>
+          <ul class="stats">{% for s in c.listing.stats %}<li>{{ s }}</li>{% endfor %}</ul>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+</main>
+{% endblock %}

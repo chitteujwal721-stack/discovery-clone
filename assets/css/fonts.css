@@ -1,0 +1,77 @@
+/* ============================================================
+   Ansari Sami — Font Faces
+   Louize Trial (display/serif) + Sweet Sans Pro (body/sans)
+   ============================================================ */
+
+@font-face {
+  font-display: swap;
+  font-family: "Louize Trial";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Louizetrial.CqlD8_g8.woff2") format("woff2"),
+       url("../fonts/Louizetrial.DlQUM7qy.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Louize Trial";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Louizetrial-Medium.BRktGTr1.woff2") format("woff2"),
+       url("../fonts/Louizetrial-Medium.DsZmZAiU.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Louize Trial";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/Louizetrial-Italic.mD9JBrv_.woff2") format("woff2"),
+       url("../fonts/Louizetrial-Italic.B5CbTe6x.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/sweet_sans_pro_regular.BI_Sx-7o.woff2") format("woff2"),
+       url("../fonts/sweet_sans_pro_regular.b6xdJVZt.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/sweet_sans_pro_italic.xYaMgQsT.woff2") format("woff2"),
+       url("../fonts/sweet_sans_pro_italic.Ce4MVUct.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/sweet_sans_pro_medium.Bc4lDX4O.woff2") format("woff2"),
+       url("../fonts/sweet_sans_pro_medium.D24qYwT5.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("../fonts/sweet_sans_pro_medium_italic.BDRLXYD9.woff2") format("woff2"),
+       url("../fonts/sweet_sans_pro_medium_italic.D7IvYRmW.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/sweet_sans_pro_bold.TpxxRN4j.woff2") format("woff2"),
+       url("../fonts/sweet_sans_pro_bold.w0GBAAeA.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/sweet_sans_pro_bold_italic.CCJ67CNP.woff2") format("woff2"),
+       url("../fonts/sweet_sans_pro_bold_italic.CINs21go.woff") format("woff");
+}

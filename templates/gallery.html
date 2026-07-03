@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:55vh;min-height:38rem;">
+    <div class="hero-media">
+      <img data-fade src="https://www.datocms-assets.com/197197/1774020893-kukio.jpg?auto=format&fit=max&h=1400&w=2200" alt="Gallery" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <p class="type-caption font-medium">GALLERY</p>
+      <h1 class="hero-title">A World Worth<br>Discovering</h1>
+    </div>
+  </section>
+
+  <section class="py-80 section-cream">
+    <div class="site-max">
+      <div class="gallery-grid reveal">
+        {% for c in communities %}
+        <figure><a href="{{ root }}communities/{{ c.slug }}/index.html"><img data-fade src="{{ c.hero }}?auto=format&fit=max&h=1200&w=1000" alt="{{ c.name }}" loading="lazy"></a></figure>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

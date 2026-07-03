@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:70vh;min-height:46rem;">
+    <div class="hero-media">
+      <img data-fade src="https://www.datocms-assets.com/197197/1772977226-hero-about.jpg?auto=format&fit=max&h=1600&w=2200" alt="About Ansari Sami" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <p class="type-caption font-medium">ABOUT US</p>
+      <h1 class="hero-title">Creating Your<br>Perfect World</h1>
+    </div>
+  </section>
+
+  <section class="py-100 section-cream">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div>
+          <h2 class="type-h3">World-renowned</h2>
+          <p class="type-body-md mt-20" style="opacity:.8;">Our private residential communities deliver modern luxury living in the most spectacular settings. With more than thirty years' experience in land development and real estate and relationships with strong venture partners, Discovery always delivers an unparalleled experience.</p>
+        </div>
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="https://www.datocms-assets.com/197197/1772977594-about-2.jpg?auto=format&fit=max&h=1400&w=1000" alt="World-renowned" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-80 section-white">
+    <div class="site-max">
+      <div class="two-col reverse reveal">
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="https://www.datocms-assets.com/197197/1777208767-about-vision.jpg?auto=format&fit=max&h=1400&w=1000" alt="Mission" loading="lazy">
+        </div>
+        <div style="align-self:center;">
+          <h2 class="type-h3">Mission</h2>
+          <p class="type-body-md mt-20" style="opacity:.8;">Ansari Sami invites you to explore a world where adventure, comfort, and community come together to offer a lifestyle experience unlike any other. With over 40 exclusive properties, our mission is to elevate the art of living and the joy of belonging amid the most breathtaking landscapes in the world.</p>
+          <p class="type-body-md mt-20" style="opacity:.8;">Founded by Mike Meldman in 1994, Discovery pairs world-class amenities and features—including championship golf courses, bespoke clubhouses, inspired residences, and our signature Outdoor Pursuits program—with exceptional hospitality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-80 section-cream">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div style="align-self:center;">
+          <h2 class="type-h3">Vision</h2>
+          <p class="type-body-md mt-20" style="opacity:.8;">For more than three decades, Discovery has developed the most sought-after private residential communities in the world. Between glistening coastal oases, peaceful mountain havens, and idyllic lakeside retreats, each distinctive community seamlessly blends our family-focused values with five-star amenities and incomparable service.</p>
+          <p class="type-body-md mt-20" style="opacity:.8;">Our vertically integrated development philosophy ensures uncompromising quality at every stage—from construction and design to management and operations.</p>
+        </div>
+        <div class="media-box aspect-portrait reveal-scale">
+          <img data-fade src="https://www.datocms-assets.com/197197/1780419636-image.jpg?auto=format&fit=max&h=1400&w=1000" alt="Vision" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-100 section-white">
+    <div class="site-max">
+      <h2 class="type-h3 reveal">Values</h2>
+      <div class="values-list">
+        <div class="reveal">
+          <h3>People are our priority</h3>
+          <p>Our goal is to impact the people and communities we are connected to positively. While developing communities and selling real estate helps us accomplish this goal, we prioritize building relationships, creating opportunities, and sharing enriching experiences.</p>
+        </div>
+        <div class="reveal">
+          <h3>Respect for people, places, and culture</h3>
+          <p>We learn from everyone we meet and every place we go. We are humble stewards of the land and seek to be valuable members of society. We celebrate authenticity and embrace diversity.</p>
+        </div>
+        <div class="reveal">
+          <h3>Integrity in everything we do</h3>
+          <p>We lean into challenges and embrace them as opportunities to grow. We strive to be open and honest in everything we do, working in good faith to always find solutions.</p>
+        </div>
+        <div class="reveal">
+          <h3>Embracing fun in the journey</h3>
+          <p>Life is a series of moments and memories worth filling with as much love, joy, and wonder as possible. We consider creativity, adventure, and play essential to our well-being.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-100 section-cream">
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-60">Leadership</h2>
+      <div class="leadership-grid">
+        {% set leaders = [
+          {"name":"Mike Meldman","role":"Founder and Chairman","img":"https://www.datocms-assets.com/197197/1746697007-msm-headshot-copy.jpeg"},
+          {"name":"Brett White","role":"Chief Executive Officer","img":"https://www.datocms-assets.com/197197/1715327873-brett-white.jpg"},
+          {"name":"Joey Arenson","role":"President","img":"https://www.datocms-assets.com/197197/1715246237-dlc_80-copy_5ae402c9837860cd6e4f65e304b3a5fa-1_2023-08-21-132028_fxdo.jpg"}
+        ] %}
+        {% for p in leaders %}
+        <div class="leadership-card reveal" style="--i:{{ loop.index0 }}">
+          <figure><img data-fade src="{{ p.img }}?auto=format&fit=max&h=900&w=700" alt="{{ p.name }}" loading="lazy"></figure>
+          <h4>{{ p.name }}</h4>
+          <p>{{ p.role }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-80 section-white">
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-60">Executive team</h2>
+      <div class="leadership-grid">
+        {% set exec_team = [
+          {"name":"Ed Divita","role":"Partner, Ansari Sami","img":"https://www.datocms-assets.com/197197/1715245712-dlc_06292023-65-copy_new_2023-08-21-132646_nuie.jpg"},
+          {"name":"J.J. Dudum","role":"Executive Vice President, Global Sales","img":"https://www.datocms-assets.com/197197/1720779530-jj-dunham-copy.jpeg"},
+          {"name":"John Frager","role":"Managing Director, Sales Operations","img":"https://www.datocms-assets.com/197197/1738000617-john-frager.jpg"},
+          {"name":"Katie Sitter","role":"Chief Human Resources Officer","img":"https://www.datocms-assets.com/197197/1729806419-katie-2.jpg"},
+          {"name":"Michael Dojlidko","role":"Chief Legal Officer","img":"https://www.datocms-assets.com/197197/1738000166-michael-dojlidko.jpg"},
+          {"name":"Michelle Ngo","role":"Chief Financial Officer","img":"https://www.datocms-assets.com/197197/1727897883-dlc_sept2024_alt-18.jpg"},
+          {"name":"Schuyler Joyner","role":"Partner, Ansari Sami","img":"https://www.datocms-assets.com/197197/1715245737-dlc_06132023-45-copy_2023-08-21-132715_yons.jpg"},
+          {"name":"Whitney Kenson Kean","role":"Chief Marketing Officer","img":"https://www.datocms-assets.com/197197/1715245779-dlc_06132023-133-copy_2023-08-21-132755_xtfg.jpg"},
+          {"name":"Trey Smith","role":"Chief Information Officer","img":"https://www.datocms-assets.com/197197/1752165148-trey-smith-1.jpg"}
+        ] %}
+        {% for p in exec_team %}
+        <div class="leadership-card reveal" style="--i:{{ loop.index0 % 6 }}">
+          <figure><img data-fade src="{{ p.img }}?auto=format&fit=max&h=900&w=700" alt="{{ p.name }}" loading="lazy"></figure>
+          <h4>{{ p.name }}</h4>
+          <p>{{ p.role }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-80 section-cream">
+    <div class="site-max">
+      <h2 class="type-h3 reveal mb-40">Discover more</h2>
+      <div class="two-col">
+        <a href="{{ root }}experiences.html" class="reveal" style="display:block;">
+          <div class="media-box aspect-square"><img data-fade src="https://www.datocms-assets.com/197197/1777365728-image-6.jpg?auto=format&fit=max&h=1200&w=1200" alt="Experiences" loading="lazy"></div>
+          <h3 class="type-h4 mt-20">Experiences</h3>
+          <p class="type-body-sm" style="opacity:.7;">Discover once-in-a-lifetime experiences</p>
+        </a>
+        <a href="{{ root }}communities/index.html" class="reveal" style="display:block;">
+          <div class="media-box aspect-square"><img data-fade src="https://www.datocms-assets.com/197197/1777365728-image-3.jpg?auto=format&fit=max&h=1200&w=1200" alt="Our Worlds" loading="lazy"></div>
+          <h3 class="type-h4 mt-20">Our Worlds</h3>
+          <p class="type-body-sm" style="opacity:.7;">Explore all our communities and resorts</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:60vh;min-height:40rem;">
+    <div class="hero-media">
+      <img data-fade src="https://www.datocms-assets.com/197197/1777382297-ext05_resort-arrival_b5_1.jpg?auto=format&fit=max&h=1400&w=2200" alt="Our Worlds" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <p class="type-caption font-medium">OUR WORLDS</p>
+      <h1 class="hero-title">The most desired<br>destinations in the world</h1>
+    </div>
+  </section>
+
+  <section class="py-80 section-cream">
+    <div class="site-max">
+      <div class="filters" data-filter-group="#communities-grid">
+        <button class="filt-bullet is-active" data-value="all">All</button>
+        <button class="filt-bullet" data-value="caribbean">Central America &amp; Caribbean</button>
+        <button class="filt-bullet" data-value="us">United States</button>
+        <button class="filt-bullet" data-value="europe">Europe &amp; UAE</button>
+      </div>
+
+      <div id="communities-grid" class="card-grid">
+        {% for c in communities %}
+        <a href="{{ root }}communities/{{ c.slug }}/index.html" class="card reveal" data-region="{{ c.region }}" style="--i:{{ loop.index0 % 8 }}">
+          <figure><img data-fade src="{{ c.hero }}?auto=format&fit=max&h=1200&w=900" alt="{{ c.name }}" loading="lazy"></figure>
+          <h3>{{ c.name }}</h3>
+          <p class="loc">{{ c.location }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-100 section-white">
+    <div class="site-max">
+      <div class="two-col reveal">
+        <div>
+          <p class="type-caption font-medium" style="opacity:.6;margin-bottom:1.6rem;">REAL ESTATE</p>
+          <h2 class="type-h2">Browse our private residential communities and resorts.</h2>
+          <p class="type-body-md mt-20" style="opacity:.75;">A unique combination of resort-style luxury, tranquility, peace and privacy.</p>
+        </div>
+        <div style="display:flex;justify-content:flex-end;align-items:flex-end;">
+          <a href="{{ root }}real-estate/index.html" class="btn">View all</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

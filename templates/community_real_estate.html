@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="top">
+
+  <section class="hero" style="height:55vh;min-height:38rem;">
+    <div class="hero-media">
+      <img data-fade src="{{ c.hero }}?auto=format&fit=max&h=1400&w=2200" alt="{{ c.name }} Real Estate" loading="eager">
+    </div>
+    <div class="site-max hero-inner">
+      <a href="{{ root }}communities/{{ c.slug }}/index.html" class="hero-crumb">
+        <span>{{ c.name|upper }}</span><span class="sep">/</span><span>Real Estate</span>
+      </a>
+      <h1 class="hero-title">{{ c.name }} Listings</h1>
+    </div>
+  </section>
+
+  <nav class="sub-nav">
+    <div class="site-max sub-nav__inner">
+      <span class="sub-nav__title">{{ c.name }}</span>
+      <div style="display:flex;">
+        <a href="{{ root }}communities/{{ c.slug }}/index.html" class="uline">Overview</a>
+        {% if c.visit_site %}<a href="{{ c.visit_site }}" target="_blank" rel="noopener" class="uline">Visit Site</a>{% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-80 section-cream">
+    <div class="site-max">
+      {% if c.listing %}
+      <div class="card-grid">
+        <a href="{{ root }}{{ c.listing.url[1:] }}" class="card reveal">
+          <figure><img data-fade src="{{ c.listing.img }}?fit=max&h=1000&q=85&w=1000" alt="{{ c.listing.name }}" loading="lazy"></figure>
+          <h3>{{ c.listing.name }}</h3>
+          <p class="loc">{{ c.listing.location }}</p>
+          <ul class="stats">{% for s in c.listing.stats %}<li>{{ s }}</li>{% endfor %}</ul>
+        </a>
+      </div>
+      {% else %}
+      <div class="reveal" style="text-align:center;padding:8rem 2rem;">
+        <h2 class="type-h4">No active listings at {{ c.name }} right now.</h2>
+        <p class="type-body-md mt-20" style="opacity:.7;">Please contact our sales team to be notified of new opportunities as they become available.</p>
+        <a href="{{ root }}contact.html" class="btn mt-40">Contact us</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+</main>
+{% endblock %}
