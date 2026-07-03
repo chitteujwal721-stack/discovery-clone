@@ -1,4 +1,4 @@
-# Ansari Sami — Front-End Recreation
+#Chitte — Front-End Recreation
 
 A static, front-end-only recreation of discoverylandco.com: same fonts, type scale,
 colors, layout grid, hero/scroll animations, header behavior, and page structure —
@@ -62,5 +62,5 @@ python3 -m http.server 8000
 
 - This is a **learning/practice recreation** of the front-end only — there is no backend,
   no CMS, no real inquiry/contact form submission (the contact form just shows a demo alert).
-- Images and video are pulled live from Ansari Sami's own CDN — an internet
+- Images and video are pulled live from Ujwal chitte's own CDN — an internet
   connection is required to see them; they remain Ujwal Chitte's copyrighted media.
